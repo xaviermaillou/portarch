@@ -1,0 +1,50 @@
+@media screen and (max-width: 600px) {
+    .auteurContainer {
+        height: 100%;
+        width: 100%;
+        padding-top: 75px;
+        color: white;
+        overflow-y: scroll;
+    }   
+    .infoAuteur {
+        height: 33%;
+        width: 100%;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        transform: translateZ(0);
+    }
+    .auteurPhoto {
+        height: 100%;
+        width: 33%;
+        background-size: cover;
+        background-position: center;
+    }
+    .infoAuteur .dataAuteur {
+        margin-left: 20px;
+    }
+    .infoAuteur .dataAuteur .icone {
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        background-size: cover;
+        background-position: center;
+    }
+    .infoAuteur .dataAuteur #pin {
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fpin.png?alt=media&token=63a6e6b8-740d-463b-bcbf-5d408771b420');
+    }
+    .infoAuteur .dataAuteur #uni {
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fgreece-2.png?alt=media&token=d3cab2a8-c5b6-4f64-b200-7d3a6baf3648');
+    }
+    .portfolioContainer {
+        width: 100%;
+        margin-top: 10px;
+        background-color: rgba(255, 255, 255, 0.25);
+        background-size: cover;
+        background-position: center;
+        scroll-snap-align: center;
+    }
+}

@@ -1,0 +1,582 @@
+@keyframes inputOpen {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+
+/*---------------------------------------- MENU GÉNÉRAL ----------------------------------------*/
+.menuContainer {
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 75px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 900;
+    display: flex;
+    justify-content: flex-end;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: height .5s;
+    transition: width .5s;
+}
+.menuContainer.ouvert {
+    width: 34vw;
+}
+
+.hamburger {
+    display: none;
+}
+
+/*---------------------------------------- FERMER MENU ----------------------------------------*/
+.menuContainer .fermerMenu {
+    height: 100vh;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .25s;
+}
+.menuContainer .fermerMenu.ferme {
+    opacity: 0;
+}
+.menuContainer .fermerMenu:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: background-color .25s;
+}
+.menuContainer .fermerMenu .fermerIcone{
+    height: 15px;
+    width: 15px;
+    background-image: url('../../img/retour.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/*---------------------------------------- MENU VIDE ----------------------------------------*/
+.lateralVide {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.mobileTutorial {
+    opacity: 0;
+}
+
+/*---------------------------------------- LATÉRAL GÉNÉRAL ----------------------------------------*/
+.lateral {
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.lateral.ouvert {
+    opacity: 1;
+}
+.lateral h2 {
+    text-align: right;
+    padding: 25px 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.lateral h3 {
+    text-transform: uppercase;
+}
+.lateral h3, .lateral h4, .lateral h5 {
+    padding: 10px 0px;
+}
+
+/*---------------------------------------- MENU RECHERCHE ----------------------------------------*/
+.tendancesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.tendanceContainer {
+    color: white;
+    margin-top: 5px;
+    background-size: cover;
+    background-position: center;
+    transition: height 0.25s, width 0.25s, opacity 0.25s;
+}
+.tendanceContainer .tendanceCover {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.tendanceContainer .tendanceCover:hover {
+    cursor: pointer;
+}
+
+.tendanceContainer .tendanceCover h4 {
+    white-space: pre-wrap;
+    text-transform: uppercase;
+}
+.rechercheContainer h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.rechercheContainer h2 form {
+    width: 100%;
+    margin-right: 10px;
+    position: relative;
+}
+.rechercheContainer h2 input[type=text] {
+    width: 100%;
+    border-bottom: 0px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 0px 5px;
+    animation-name: inputOpen;
+    animation-duration: 1s;
+}
+.rechercheContainer h3 {
+    width: 100%;
+    position: relative;
+}
+.rechercheContainer h3 div {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin-left: 10px;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fcroix.png?alt=media&token=838b5356-344a-4969-bde9-6e9a976b0628');
+    background-size: cover;
+    background-position: center;
+    transform: translateY(1px);
+}
+.iconeOK {
+    position: absolute;
+    right: 5px;
+    transform: translateY(-3px);
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+.iconeOK.ouvert {
+    opacity: 1;
+}
+
+/*---------------------------------------- MENU AJOUTER ----------------------------------------*/
+.ajouterContainer .remain {
+    color: grey;
+}
+.addForm {
+    transition: opacity 0.5s;
+}
+.addForm.ferme {
+    opacity: 0;
+}
+.mainPictureForm {
+    width: 100%;
+    margin-top: 5px;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.mainPictureForm.uploaded {
+    background-size: cover;
+    border: none;
+}
+.mainPictureForm:hover > .edit {
+    cursor: pointer;
+    opacity: 1;
+}
+.mainPictureForm .edit {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+.secondaryPicturesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.secondaryPicturesForm {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fplus2.png?alt=media&token=7cf0f025-0bb6-465b-958e-ea081cb31696');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin: 1vw 1vw;
+}
+.secondaryPictures {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    margin: 1vw 1vw;
+}
+.delete {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fcroix.png?alt=media&token=838b5356-344a-4969-bde9-6e9a976b0628');
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+.delete.ouvert {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.addForm label {
+    position: relative;
+    margin-top: 10px;
+}
+.addForm label .loadingIcon {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fgiphy.gif?alt=media&token=97c5049b-68db-406e-acdf-513b5314f77e');
+    background-size: 300%;
+    background-position: center;
+    transform: translateY(5px);
+    opacity: 0;
+}
+.addForm label .loadingIcon.ouvert {
+    opacity: 1;
+}
+.addForm label .error {
+    color: red;
+    position: absolute;
+    right: 0;
+}
+
+.addForm textarea {
+    margin: 0;
+}
+.addForm label .maxChars {
+    color: grey;
+}
+
+.projet {
+    height: 0px;
+    width: 0px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: height 0.5s, width 0.5s;
+}
+.projet .edit {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.90);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+.projet .edit.ouvert {
+    opacity: 1;
+    pointer-events: all;
+}
+.projet .edit form {
+    position: relative;
+}
+.projet .edit .loadingIconEdit {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fgiphy.gif?alt=media&token=97c5049b-68db-406e-acdf-513b5314f77e');
+    background-size: 300%;
+    background-position: center;
+    transform: translateY(5px);
+    opacity: 0;
+}
+.projet .edit .loadingIconEdit.ouvert {
+    opacity: 1;
+}
+.projet .edit h4 {
+    height: 20px;
+    padding: 0px;
+    margin: 10px 0px;
+    text-transform: uppercase;
+}
+.projet .edit h4:hover {
+    cursor: pointer;
+}
+.projet .edit input {
+    margin: 10px 0px;
+}
+.projet .edit .formSubmit {
+    padding: 0px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.projet .edit .formSubmit.textareaSubmit {
+    bottom: -25px;
+}
+.projet .edit .description {
+    margin: 5px 0px;
+    cursor: pointer;
+    white-space: pre-wrap;
+}
+.projet .edit textarea {
+    width: 100%;
+}
+.photosContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.projet .edit .addPhotos {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fplus2.png?alt=media&token=7cf0f025-0bb6-465b-958e-ea081cb31696');
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin: 1.75vw;
+}
+.projet .edit .addPhotos:hover {
+    cursor: pointer;
+}
+.projet .edit .photosSecondairesEdit {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    margin: 1.75vw;
+}
+.projet .edit .ok {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+.projet .edit .deleteForm {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+.projet .edit .deleteForm:hover {
+    cursor: pointer;
+    opacity: 1;
+    color: red;
+}
+.projet .edit .confirm {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    padding: 5px;
+    bottom: 0;
+    left: 0;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+
+}
+.projet .edit .confirm span {
+    margin: 0px 10px;
+}
+.projet .edit .confirm span:hover {
+    cursor: pointer;
+    color: red;
+}
+
+/*---------------------------------------- MENU PROFIL ----------------------------------------*/
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.username {
+    display: flex;
+    align-items: center;
+}
+.username .edit {
+    height: 15px;
+    width: 15px;
+    margin-left: 5px;
+    display: inline-block;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fpencil.png?alt=media&token=7911697d-8e8f-4a1b-8252-c32e855d1dbc');
+    background-size: contain;
+    background-position: center;
+    opacity: 0.5;
+}
+.username .edit:hover {
+    cursor: pointer;
+    opacity: 1;
+} 
+.editNameInput {
+    height: 33px;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+.profilePictureGrand {
+    height: 0;
+    width: 0;
+    margin: 10px 0px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: height 0.5s, width 0.5s;
+}
+.profilePictureGrand:hover > .edit {
+    cursor: pointer;
+    opacity: 1;
+}
+.profilePictureGrand .edit {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+.profilePictureGrand .error {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+/*---------------------------------------- ICÔNES MENU ----------------------------------------*/
+.menuContainer .iconesContainer {
+    height: 100vh;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuContainer .iconesContainer .icone {
+    height: 35px;
+    width: 35px;
+    background-size: contain;
+    margin: 5vh;
+}
+.menuContainer .icone:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+.menuContainer .profil {
+    background-image: url('../../img/profil.png');
+}
+.menuContainer .ajouter {
+    background-image: url('../../img/plus.png');
+}
+.menuContainer .chercher {
+    background-image: url('../../img/loupe.png');
+}
+
+/*---------------------------------------- VERSION MOBILE ----------------------------------------*/
+@media screen and (max-width: 900px) {
+    .menuContainer.ouvert {
+        width: 60vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    .menuContainer {
+        height: 0;
+        width: 0;
+    }
+    .menuContainer.ouvertMobile {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .lateral {
+        padding-bottom: 75px;
+    }
+    .lateral h2 {
+        padding-top: 30px;
+    }
+
+
+    .hamburger {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        position: fixed;
+        top: 25px;
+        right: 12px;
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fmenu2.png?alt=media&token=47fbea82-be7e-4c13-a7eb-a5885eaddba6');
+        background-size: cover;
+        background-position: center;
+        z-index: 1100;
+    }
+    .hamburger.ouvert {
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/portarch-4f70e.appspot.com/o/icônes%2Fcroix.png?alt=media&token=838b5356-344a-4969-bde9-6e9a976b0628');
+    }
+
+
+    .menuContainer .fermerMenu {
+        width: 20px;
+    }
+    .menuContainer .fermerMenu .fermerIcone{
+        display: none;
+    }
+
+
+    .lateral {
+        padding-top: 50px;
+    }
+    
+    .mobileTutorial {
+        opacity: 1;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+    }
+    .mobileTutorial span {
+        font-size: 25px;
+        margin: 5vh;
+    }
+
+    .mainPictureForm:hover > .edit {
+        opacity: 0;
+    }
+
+
+    .profilePictureGrand:hover > .edit {
+        opacity: 0;
+    }
+    .username .edit:hover {
+        opacity: 0.5;
+    } 
+
+
+    .menuContainer .iconesContainer {
+        width: 50px;
+    }
+    .menuContainer .iconesContainer .icone {
+        height: 30px;
+        width: 30px;
+    }
+  }

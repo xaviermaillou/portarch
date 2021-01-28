@@ -1,0 +1,30 @@
+.albumContainer {
+    height: 100vh;
+    width: 66%;
+    overflow-y: scroll;
+    padding-top: 20vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.photoContainer {
+    height: 45%;
+    width: 30%;
+    margin-bottom: 2vw;
+    background-color: rgba(255, 255, 255, 0.05);
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 600px) {
+    .albumContainer {
+        height: 70%;
+        width: 100%;
+        padding-top: 15px;
+    }
+    .albumContainer.ferme {
+        display: none;
+    }
+}

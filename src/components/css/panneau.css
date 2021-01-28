@@ -1,0 +1,40 @@
+.container {
+    margin-bottom: 10px;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    transition: opacity 0.25s;
+    color: black;
+}
+
+.panneauFront {
+    position: relative;
+    min-width: 100vw;
+    background-size: cover;
+    background-position: center;
+    scroll-snap-align: center;
+}
+
+.panneauBack {
+    position: relative;
+    min-width: 100vw;
+    scroll-snap-align: center;
+    overflow: hidden;
+}
+
+.panneauAuteur {
+    position: relative;
+    min-width: 100vw;
+    scroll-snap-align: center;
+    transition: height 0.25s;
+}
+
+@media screen and (max-width: 600px) {
+    .container.cache {
+        opacity: 0.15;
+    }    
+}
